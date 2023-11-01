@@ -6,7 +6,7 @@ const GetStartPage = () => {
     <div className="py-4 d-flex align-items-center justify-content-center">
       <div className="osahan-started pt-2 text-center">
         <img
-          src="/img/sign-in-pana.svg"
+          src="/img/train2.svg"
           className="img-fluid mb-2 col-9 mx-auto"
           alt="Sign In"
         />
@@ -15,9 +15,7 @@ const GetStartPage = () => {
             Start by creating an account.
           </h5>
           <p className="text-muted">
-            I'm an early bird and I'm a night owl, so I'm
-            <br />
-            wise and I have worms.
+            Your Journey, Our Priority
           </p>
         </div>
         <div className="fixed-bottom p-4">

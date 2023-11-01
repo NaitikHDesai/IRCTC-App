@@ -3,21 +3,15 @@ import { message } from 'antd';
 
 
 export const signupUser = (values) => async dispatch => {
-    dispatch({ type: 'LOADING', payload: true })
 
     try {
         await axios.post('/api/user/signup', values);
-        message.success("User Registered Successfully");
+        message.success("User Registered Successfully ,Please Verify the Mail");
         setTimeout(() => {
             window.location.href = '/signin';
         }, 1000);
-        dispatch({ type: 'LOADING', payload: false })
-
     } catch (error) {
-        console.log(values);
         message.error('someting went wrong please Try later')
-        dispatch({ type: 'LOADING', payload: false })
-
     }
 }
 
@@ -37,14 +31,23 @@ export const loginUser = (values) => async dispatch => {
     }
 }
 
-/*export const forgetPass = (values) => async (dispatch) => {
+export const getAllUsers = () => async (dispatch) => {
+    try {
+        const response = await axios.get('api/user/getallusers')
+        dispatch({ type: 'GET_ALL_USERS', payload: response.data })
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const forgetPass = (values) => async (dispatch) => {
     dispatch({ type: 'LOADING', payload: true })
     try {
         await axios.post('/api/user/forgetpassword', values)
 
         message.success('Password Update Successfull')
         setTimeout(() => {
-            window.location.href = '/login';
+            window.location.href = '/signin';
         }, 1000)
         dispatch({ type: 'LOADING', payload: false })
 
@@ -52,4 +55,4 @@ export const loginUser = (values) => async dispatch => {
         message.error("Please try again ");
         dispatch({ type: 'LOADING', payload: false })
     }
-}*/
+}

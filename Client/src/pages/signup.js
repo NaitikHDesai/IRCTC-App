@@ -12,14 +12,11 @@ function Signup() {
     const existingUser = users.find(user => user.email === values.email);
 
     if (existingUser) {
-      console.log(values);
       message.error('Email already exists');
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(values.password)) {
+      message.error('Password Should be Strong');
     } else if (values.password !== values.cnfpassword) {
       message.error('Password mismatch');
-    } else if (
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(values.password)
-    ) {
-      message.error('Password Should be Strong');
     } else {
       try {
         await dispatch(signupUser(values));
@@ -60,10 +57,7 @@ function Signup() {
             <Input.Password placeholder="Confirm Your Password" />
           </Form.Item>
 
-          <Button
-            htmlType="submit"
-            className="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4"
-          >
+          <Button htmlType="submit" className="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4"         >
             CREATE AN ACCOUNT
           </Button>
 
