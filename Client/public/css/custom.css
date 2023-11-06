@@ -730,3 +730,12 @@ h1.success-icon {
 	position: absolute;
 	z-index: -1;
 }
+
+.righted {
+	margin-left: 75rem;
+}
+
+
+.inline-elements {
+	display: inline-block;
+}

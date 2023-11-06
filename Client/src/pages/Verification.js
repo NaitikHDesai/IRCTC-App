@@ -13,7 +13,7 @@ function Verification() {
         if (isVerificationSuccessful) {
             setTimeout(() => {
                 window.location.href = '/signin';
-            }, 1000);
+            }, 2000);
         }
     }, [isVerificationSuccessful]);
 

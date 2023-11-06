@@ -37,14 +37,28 @@ const Signin = () => {
           <Form.Item name="password" label="Password" rules={[{ required: true, message: "Password is required", },]}          >
             <Input.Password placeholder="Enter Your Password" />
           </Form.Item>
-          <div className="text-right mb-3">
-            <a href="/forgetPassword" className="text-muted small">
-              Forgot your password?
-            </a>
-          </div>
-          <Button htmlType="submit" className="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1"          >
+
+          <Button htmlType="submit" className="btn btn-danger btn-block osahanbus-btn mb-4 rounded-1" style={{ marginTop: "20px" }}>
             SIGN IN
           </Button>
+          <center>
+            <div className="inline-elements">
+              <p style={{ display: "inline" }}>or </p>
+              <span className="">
+                <a href="/forgetPassword">
+                  Forgot your password?
+                </a>
+              </span>
+            </div>
+
+            <hr />
+            <span>
+              New User?
+              <a href="/signup">
+                Register here.
+              </a>
+            </span>
+          </center>
         </Form>
       </div>
     </div >

@@ -42,8 +42,11 @@ function Signup() {
             <Input type="email" placeholder="Enter Your Email" />
           </Form.Item>
 
-          <Form.Item name="username" label="Username" rules={[{ required: true, message: 'Username is required' }]}>
-            <Input type="text" placeholder="Enter Your Username" />
+          <Form.Item name="firstname" label="First Name" rules={[{ required: true, message: 'First Name is required' }]}>
+            <Input type="text" placeholder="Enter Your First Name" />
+          </Form.Item>
+          <Form.Item name="lastname" label="Last Name" rules={[{ required: true, message: 'Last Name is required' }]}>
+            <Input type="text" placeholder="Enter Your Last Name" />
           </Form.Item>
 
           <Form.Item name="password" label="Password" rules={[{ required: true, message: 'Password is required' }]}>
@@ -60,10 +63,13 @@ function Signup() {
           <Button htmlType="submit" className="btn btn-danger btn-block osahanbus-btn mb-3 rounded-1 mt-4"         >
             CREATE AN ACCOUNT
           </Button>
-
-          <p className="text-muted text-center small">
-            By signing up, you agree to our Privacy Policy and Terms.
-          </p>
+          <hr />
+          <center> <span>
+            Already Have An Account?
+            <a href="/signin">
+              Sign In
+            </a>
+          </span></center>
         </Form>
       </div>
     </div>

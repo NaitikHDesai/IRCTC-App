@@ -1,6 +1,16 @@
 import React from "react";
 import Footer from "./footer";
+import { LogoutOutlined } from '@ant-design/icons';
 const Home = () => {
+  const iconStyle = {
+    fontSize: '24px',
+    color: 'white',
+    cursor: 'pointer',
+  };
+  const logout = () => {
+    localStorage.removeItem('user');
+    window.location.reload();
+  }
   return (
     <div className="osahan-verification padding-bt">
       <div className="p-3 shadow bg-danger danger-nav osahan-home-header">
@@ -10,6 +20,11 @@ const Home = () => {
             className="img-fluid osahan-nav-logo"
             alt="Logo"
           />
+          <div style={{ flex: 1 }}></div>
+          <div onClick={logout} style={iconStyle}>
+            <LogoutOutlined />
+          </div>
+
         </div>
       </div>
       <div className="bg-danger px-3 pb-3">
@@ -148,7 +163,7 @@ const Home = () => {
         </div>
       </div>
       <Footer></Footer>
-    </div>
+    </div >
   );
 };
 

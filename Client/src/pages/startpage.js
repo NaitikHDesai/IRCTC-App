@@ -6,7 +6,7 @@ const FirstPage = () => {
     <div className="osahan-index bg-c d-flex align-items-center justify-content-center vh-100 index-page">
       <div className="text-center">
         <a href="/getstart">
-          <i className=" text-white display-1 bg-danger p-4 rounded-circle">
+          <i className=" text-white display-1 bg-white p-4 rounded-circle">
             <img src="img/ps1.gif" />
           </i>
 
